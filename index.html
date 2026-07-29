@@ -4,70 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>上砂川岳温泉 パンケの湯</title>
-<style>
-  :root{
-    --main:#2a6f6f;
-    --accent:#e8963a;
-    --bg:#f5f1e8;
-    --text:#333;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--text);background:var(--bg);line-height:1.7;}
-
-  /* ヘッダー */
-  header{background:var(--main);color:#fff;padding:14px 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 6px rgba(0,0,0,.2);}
-  header .inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-  header h1{font-size:1.3rem;letter-spacing:.05em;}
-  nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap;}
-  nav a{color:#fff;text-decoration:none;font-size:.9rem;transition:.2s;}
-  nav a:hover{color:var(--accent);}
-
-  /* ヒーロー */
-  .hero{background:linear-gradient(rgba(42,111,111,.55),rgba(42,111,111,.55)),
-        url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1400&q=80') center/cover;
-        height:60vh;min-height:360px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:20px;}
-  .hero h2{font-size:2.4rem;text-shadow:0 2px 8px rgba(0,0,0,.5);margin-bottom:12px;}
-  .hero p{font-size:1.1rem;text-shadow:0 1px 6px rgba(0,0,0,.5);}
-
-  /* セクション共通 */
-  section{max-width:1000px;margin:0 auto;padding:60px 20px;}
-  section h3{font-size:1.6rem;color:var(--main);border-left:6px solid var(--accent);padding-left:14px;margin-bottom:26px;}
-
-  /* お知らせ */
-  .news-list{list-style:none;}
-  .news-list li{padding:12px 0;border-bottom:1px dashed #ccc;display:flex;gap:16px;flex-wrap:wrap;}
-  .news-list .date{color:var(--accent);font-weight:bold;min-width:100px;}
-
-  /* カード */
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
-  .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:.2s;}
-  .card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.12);}
-  .card .body{padding:20px;}
-  .card h4{color:var(--main);margin-bottom:10px;font-size:1.2rem;}
-  .card .icon{font-size:2.4rem;text-align:center;padding:24px 0;background:var(--main);color:#fff;}
-
-  /* テーブル */
-  table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08);}
-  th,td{padding:14px 16px;text-align:left;border-bottom:1px solid #eee;}
-  th{background:var(--main);color:#fff;width:35%;}
-  tr:last-child td{border-bottom:none;}
-
-  /* 料金 */
-  .price-table td:last-child{font-weight:bold;color:var(--accent);}
-
-  /* アクセス */
-  .access-box{background:#fff;padding:24px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);}
-
-  /* フッター */
-  footer{background:var(--main);color:#fff;text-align:center;padding:30px 20px;font-size:.85rem;}
-  footer .tel{font-size:1.4rem;font-weight:bold;color:var(--accent);margin:8px 0;}
-  .note{background:#fff8ec;border:1px solid var(--accent);padding:16px;border-radius:8px;margin-top:20px;font-size:.85rem;color:#7a5a20;}
-
-  @media(max-width:600px){
-    .hero h2{font-size:1.7rem;}
-    th{width:45%;}
-  }
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -91,13 +28,11 @@
   <p>四季折々の自然に包まれた、日帰り温泉でひとやすみ</p>
 </div>
 
-<!-- お知らせ -->
+<!-- お知らせ：中身は news.json から自動で入ります -->
 <section id="news">
   <h3>お知らせ</h3>
-  <ul class="news-list">
-    <li><span class="date">2026.07.01</span><span>夏季の営業時間についてのご案内をはじめました。</span></li>
-    <li><span class="date">2026.06.15</span><span>毎月8のつく日は入浴割引デーを実施しています。</span></li>
-    <li><span class="date">2026.06.01</span><span>レストランに季節限定メニューが登場しました。</span></li>
+  <ul class="news-list" id="news-list">
+    <li>お知らせを読み込み中です...</li>
   </ul>
 </section>
 
@@ -106,15 +41,15 @@
   <h3>お風呂・温泉</h3>
   <div class="cards">
     <div class="card">
-      <div class="icon">♨</div>
+      <img src="images/spa-inside.jpg" alt="内湯">
       <div class="body"><h4>内湯</h4><p>広々とした大浴場で、ゆったりと体を温めていただけます。</p></div>
     </div>
     <div class="card">
-      <div class="icon">🌿</div>
+      <img src="images/spa-open.jpg" alt="露天風呂">
       <div class="body"><h4>露天風呂</h4><p>上砂川の自然を眺めながら、開放感あふれるひとときを。</p></div>
     </div>
     <div class="card">
-      <div class="icon">🔥</div>
+      <img src="images/sauna.jpg" alt="サウナ">
       <div class="body"><h4>サウナ</h4><p>じっくり汗を流して、心も体もリフレッシュ。</p></div>
     </div>
   </div>
@@ -123,13 +58,11 @@
 <!-- 料金・営業時間 -->
 <section id="info">
   <h3>料金・営業時間</h3>
-
   <h4 style="margin-bottom:12px;color:#555;">営業時間</h4>
   <table style="margin-bottom:40px;">
     <tr><th>平日</th><td>10:00 〜 22:00（最終入館 21:30）</td></tr>
     <tr><th>土日祝</th><td>9:00 〜 22:00（最終入館 21:30）</td></tr>
   </table>
-
   <h4 style="margin-bottom:12px;color:#555;">日帰り入浴料金</h4>
   <table class="price-table">
     <tr><th>大人（中学生以上）</th><td>500円</td></tr>
@@ -159,7 +92,6 @@
   </div>
 </section>
 
-<!-- フッター -->
 <footer>
   <p>上砂川岳温泉 パンケの湯</p>
   <p class="tel">☎ 0125-62-2526</p>
@@ -167,5 +99,6 @@
   <p style="margin-top:10px;">&copy; 上砂川岳温泉 パンケの湯</p>
 </footer>
 
+<script src="js/news.js"></script>
 </body>
 </html>
