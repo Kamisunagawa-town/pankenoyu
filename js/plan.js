@@ -2,7 +2,7 @@
 const rooms = [
   {
     name: "トイレ付 洋室（ツインルーム）",
-    note: "全室バス（ユニットバス）・トイレ完備",
+    note: "全室ユニットバス・トイレ完備",
     highlight: true,
     rows: [
       { people: "1名", sudomari: "6,200円", asa: "7,200円", nishoku: "10,200円" },
