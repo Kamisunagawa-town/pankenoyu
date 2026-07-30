@@ -64,6 +64,25 @@ tr:last-child td{border-bottom:none;}
   width:78%;
 }
 
+/* 迎え便・送り便を横並びに */
+.bus-columns{
+  display:flex;
+  gap:24px;
+  align-items:flex-start;
+}
+.bus-columns > div{
+  flex:1;
+}
+.bus-columns h4{
+  margin-bottom:12px;
+  color:#555;
+}
+
+/* スマホでは縦並びに */
+@media(max-width:768px){
+  .bus-columns{flex-direction:column;}
+}
+
 .access-box{background:#fff;padding:24px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);}
 
 /* 温泉ガイドなどへの誘導ボタン */
