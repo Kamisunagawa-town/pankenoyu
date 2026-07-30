@@ -50,6 +50,24 @@ tr:last-child td{border-bottom:none;}
 
 .access-box{background:#fff;padding:24px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);}
 
+/* 温泉ガイドなどへの誘導ボタン */
+.btn-guide{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  padding:14px 32px;
+  border-radius:30px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+  transition:.2s;
+}
+.btn-guide:hover{
+  background:var(--main);
+  transform:translateY(-2px);
+}
+
+
 footer{background:var(--main);color:#fff;text-align:center;padding:30px 20px;font-size:.85rem;}
 footer .tel{font-size:1.4rem;font-weight:bold;color:var(--accent);margin:8px 0;}
 
