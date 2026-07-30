@@ -62,6 +62,7 @@ const plans = [
 // プランをカードとして表示
 document.addEventListener("DOMContentLoaded", function () {
   const wrap = document.getElementById("plan-list");
+  wrap.innerHTML = "";
   plans.forEach(function (p) {
     const card = document.createElement("div");
     card.className = "plan-card" + (p.highlight ? " plan-highlight" : "");
