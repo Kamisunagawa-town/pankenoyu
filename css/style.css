@@ -41,6 +41,13 @@ th{background:var(--main);color:#fff;width:35%;}
 tr:last-child td{border-bottom:none;}
 .price-table td:last-child{font-weight:bold;color:var(--accent);}
 
+/* 日帰り入浴料金表：セル幅を均等に */
+.bath-price th,
+.bath-price td{
+  width:25%;
+  text-align:center;
+}
+
 .access-box{background:#fff;padding:24px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);}
 
 footer{background:var(--main);color:#fff;text-align:center;padding:30px 20px;font-size:.85rem;}
