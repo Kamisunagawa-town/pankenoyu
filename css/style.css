@@ -219,13 +219,13 @@ footer .tel{font-size:1.4rem;font-weight:bold;color:var(--accent);margin:8px 0;}
   flex: 1;
 }
 .restaurant-card .restaurant-image img {
-  width: auto;
-  height:220px;
+  width: 100%;
+  height: auto;
   border-radius: 8px;
   display: block;
 }
 .restaurant-card .restaurant-text {
-  flex: 1;
+  flex: 2;
 }
 
 /* スマホでは縦並びに */
