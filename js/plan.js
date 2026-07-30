@@ -23,7 +23,7 @@ const rooms = [
   },
   {
     name: "トイレ付 和室",
-    note: "温水洗浄便座付き",
+    note: "定員5名・トイレ付",
     rows: [
       { people: "1名", sudomari: "5,900円", asa: "6,900円", nishoku: "9,900円" },
       { people: "2名", sudomari: "5,400円", asa: "6,400円", nishoku: "9,400円" },
