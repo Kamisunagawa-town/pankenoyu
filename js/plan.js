@@ -1,83 +1,85 @@
-// 宿泊プラン一覧データ
-const plans = [
+// 宿泊プラン（客室タイプ別）データ
+const rooms = [
   {
-    name: "【パンケの湯】2食付きプラン",
-    room: "和室（トイレ付きタイプ）／ 洋室（ツインルーム）",
-    total: "17,200円",
-    unit: "8,600円",
-    desc: "当パンケの湯料理長が腕によりをかけ、自信をもってお出しするとても好評の和食膳をぜひご賞味ください。夕食は、和室（トイレ付き）のお客様はお部屋で、洋室（ツインルーム）のお客様は館内レストランでお召し上がりいただきます。朝食は7:30より館内レストラン「パンケ」にて。ご人数により別途会食部屋のご用意もご相談を承ります（会食部屋は無料。予約状況によりご用意できない場合あり）。",
-    highlight: true
+    name: "トイレ付 洋室（ツインルーム）",
+    note: "全室バス（ユニットバス）・トイレ完備",
+    highlight: true,
+    rows: [
+      { people: "1名", sudomari: "6,200円", asa: "7,200円", nishoku: "10,200円" },
+      { people: "2名", sudomari: "5,700円", asa: "6,700円", nishoku: "9,700円" },
+      { people: "3名", sudomari: "5,100円", asa: "6,100円", nishoku: "9,100円" }
+    ]
   },
   {
-    name: "【パンケの湯】夕食付きプラン",
-    room: "和室（トイレ付きタイプ）／ 洋室（ツインルーム）",
-    total: "15,200円",
-    unit: "7,600円",
-    desc: "朝早くチェックアウトされる方に最適な夕食付きプラン。料理長自慢の好評の和食膳をご賞味ください。和室（トイレ付き）のお客様はお部屋で、洋室のお客様は館内レストランで夕食を。ご人数により別途会食部屋のご相談も承ります（無料・予約状況により不可の場合あり）。"
+    name: "特別室",
+    note: "ゆったり過ごせる特別室",
+    rows: [
+      { people: "1名", sudomari: "10,000円", asa: "11,000円", nishoku: "14,000円" },
+      { people: "2名", sudomari: "9,000円", asa: "10,000円", nishoku: "13,000円" },
+      { people: "3名", sudomari: "7,900円", asa: "8,900円", nishoku: "11,900円" },
+      { people: "4名", sudomari: "6,500円", asa: "7,500円", nishoku: "10,500円" },
+      { people: "5〜6名", sudomari: "5,400円", asa: "6,400円", nishoku: "9,400円" }
+    ]
   },
   {
-    name: "【トイレ無し和室】2食付きプラン",
-    room: "和室（トイレ無し10畳タイプ）",
-    total: "14,200円",
-    unit: "7,100円",
-    desc: "夕・朝食付きプラン。トイレの無い和室ですが、その分リーズナブルにご宿泊いただけます。お食事内容やサービスは他プランと変わりません。料理長自慢の好評の和食膳をどうぞ。夕食はお部屋で（人数により会食部屋のご相談も可・無料）。"
+    name: "トイレ付 和室",
+    note: "温水洗浄便座付き",
+    rows: [
+      { people: "1名", sudomari: "5,900円", asa: "6,900円", nishoku: "9,900円" },
+      { people: "2名", sudomari: "5,400円", asa: "6,400円", nishoku: "9,400円" },
+      { people: "3〜4名", sudomari: "4,800円", asa: "5,800円", nishoku: "8,800円" }
+    ]
   },
   {
-    name: "【トイレ無し和室】夕食付きプラン",
-    room: "和室（トイレ無し10畳タイプ）",
-    total: "12,200円",
-    unit: "6,100円",
-    desc: "朝早くチェックアウトされる方に最適な夕食付きプラン。トイレの無い和室ですが、その分リーズナブル。お食事内容やサービスは他プランと変わりません。料理長自慢の和食膳を、お部屋でごゆっくりお召し上がりください。"
+    name: "トイレ無 和室（10畳）",
+    note: "定員5名・リーズナブル",
+    rows: [
+      { people: "1名", sudomari: "4,300円", asa: "5,300円", nishoku: "8,300円" },
+      { people: "2名", sudomari: "3,800円", asa: "4,800円", nishoku: "7,800円" },
+      { people: "3〜4名", sudomari: "3,500円", asa: "4,500円", nishoku: "7,500円" },
+      { people: "5名", sudomari: "3,300円", asa: "4,300円", nishoku: "7,300円" }
+    ]
   },
   {
-    name: "【パンケの湯】朝食付きプラン",
-    room: "和室（トイレ付きタイプ）／ 洋室（ツインルーム）",
-    total: "12,000円",
-    unit: "6,000円",
-    desc: "一日の活力は朝食から。チェックインが遅くなる方、夕食は館内レストランで食べたい方に最適です。朝食は7:30より館内レストランにて（和室・洋室どちらも同様）。"
-  },
-  {
-    name: "【パンケの湯】素泊まりプラン",
-    room: "洋室 ／ 和室（トイレ付きタイプ）",
-    total: "10,000円",
-    unit: "5,000円",
-    desc: "1泊2日はもちろん、長期滞在にも向いた素泊まりプラン。洋室は全室バス（ユニットバス）・トイレ付き、和室はトイレ付き和室でのご提供です（全室 温水洗浄便座）。館内「レストラン パンケ」もご利用いただけます。"
-  },
-  {
-    name: "【トイレ無し和室】朝食付きプラン",
-    room: "和室（トイレ無し10畳タイプ）",
-    total: "9,000円",
-    unit: "4,500円",
-    desc: "朝食付きプラン。チェックインが遅くなる方、夕食は館内レストランで食べたい方に最適です。トイレの無い和室ですが、その分リーズナブル。朝食は7:30より館内レストラン パンケにて。"
-  },
-  {
-    name: "【トイレ無し和室】素泊まりプラン",
-    room: "和室（トイレ無し10畳タイプ）",
-    total: "7,000円",
-    unit: "3,500円",
-    desc: "1泊2日はもちろん、長期滞在にも向いた素泊まりプラン。トイレの無い和室ですが、その分もっともリーズナブルにご宿泊いただけます。館内「レストラン パンケ」もご利用いただけます。"
+    name: "トイレ無 和室（7畳）",
+    note: "定員2名・もっともリーズナブル",
+    rows: [
+      { people: "1名", sudomari: "4,000円", asa: "5,000円", nishoku: "8,000円" },
+      { people: "2名", sudomari: "3,600円", asa: "4,600円", nishoku: "7,600円" }
+    ]
   }
 ];
 
-// プランをカードとして表示
+// 客室カードとして表示
 document.addEventListener("DOMContentLoaded", function () {
   const wrap = document.getElementById("plan-list");
   wrap.innerHTML = "";
-  plans.forEach(function (p) {
+  rooms.forEach(function (r) {
     const card = document.createElement("div");
-    card.className = "plan-card" + (p.highlight ? " plan-highlight" : "");
+    card.className = "plan-card" + (r.highlight ? " plan-highlight" : "");
 
-    let badge = p.highlight ? '<span class="plan-badge">人気</span>' : "";
+    let badge = r.highlight ? '<span class="plan-badge">人気</span>' : "";
+
+    let tableRows = "";
+    r.rows.forEach(function (row) {
+      tableRows +=
+        '<tr>' +
+          '<td>' + row.people + '</td>' +
+          '<td>' + row.sudomari + '</td>' +
+          '<td>' + row.asa + '</td>' +
+          '<td>' + row.nishoku + '</td>' +
+        '</tr>';
+    });
 
     card.innerHTML =
       badge +
-      '<h4>' + p.name + '</h4>' +
-      '<p class="plan-room">🛏 ' + p.room + '</p>' +
-      '<p class="plan-desc">' + p.desc + '</p>' +
-      '<div class="plan-price">' +
-        '<span class="plan-total">' + p.total + '</span>' +
-        '<span class="plan-unit">（お一人 ' + p.unit + '）</span>' +
-      '</div>';
+      '<h4>' + r.name + '</h4>' +
+      '<p class="plan-room">🛏 ' + r.note + '</p>' +
+      '<table class="mini-price">' +
+        '<tr><th>人数</th><th>素泊</th><th>朝食付</th><th>2食付</th></tr>' +
+        tableRows +
+      '</table>' +
+      '<p class="plan-unit">お一人あたり・税込（入湯税込）</p>';
     wrap.appendChild(card);
   });
 });
