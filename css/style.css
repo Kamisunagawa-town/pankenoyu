@@ -98,3 +98,58 @@ footer .tel{font-size:1.4rem;font-weight:bold;color:var(--accent);margin:8px 0;}
 @media(max-width:600px){
   .dot-list.two-col{columns:1;}
 }
+
+/* お食事イメージ（夕食・朝食を横並び） */
+.meal-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-bottom:16px;
+}
+.meal-images figure{margin:0;}
+.meal-images img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
+}
+.meal-images figcaption{
+  font-size:.82rem;
+  color:#777;
+  text-align:center;
+  margin-top:6px;
+}
+
+/* スマホでは縦並びに */
+@media(max-width:600px){
+  .meal-images{grid-template-columns:1fr;}
+}
+
+/* お部屋タイプ */
+.room-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.room-card{
+  margin:0;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+.room-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+.room-card figcaption{padding:20px;}
+.room-card h4{color:var(--main);font-size:1.2rem;margin-bottom:8px;}
+.room-card p{font-size:.9rem;color:#555;}
+
+@media(max-width:600px){
+  .room-grid{grid-template-columns:1fr;}
+}
