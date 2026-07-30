@@ -48,6 +48,22 @@ tr:last-child td{border-bottom:none;}
   text-align:center;
 }
 
+/* 送迎バス時刻表 */
+.bus-table th,
+.bus-table td{
+  text-align:left;
+}
+.bus-table td:first-child,
+.bus-table th:first-child{
+  width:22%;
+  font-weight:bold;
+  color:var(--main);
+  white-space:nowrap;
+}
+.bus-table th:last-child{
+  width:78%;
+}
+
 .access-box{background:#fff;padding:24px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);}
 
 /* 温泉ガイドなどへの誘導ボタン */
