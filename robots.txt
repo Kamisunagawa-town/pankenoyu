@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kamisunagawa-town.github.io/pankenoyu/sitemap.xml
